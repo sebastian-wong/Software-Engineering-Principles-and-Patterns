@@ -8,12 +8,14 @@ import java.io.IOException;
 
 public class Input {
 
-	ArrayList<String> listOfTitles	 = new ArrayList<String>();
-	ArrayList<String> listOfIgnoredWords = new ArrayList<String>();
+	ArrayList<String> listOfTitles;
+	ArrayList<String> listOfIgnoredWords;
 
 	// constructor
 	public Input (String titleFileName, String ignoreFileName)
 	{
+		listOfTitles  = new ArrayList<String>();
+		listOfIgnoredWords = new ArrayList<String>();
 		readFile(titleFileName , listOfTitles);
 		readFile(ignoreFileName , listOfIgnoredWords);
 	}

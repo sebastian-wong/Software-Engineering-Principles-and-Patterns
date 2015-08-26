@@ -1,6 +1,7 @@
 *.pydevproject
 .metadata
 .gradle
+.recommenders/
 bin/
 tmp/
 *.tmp
@@ -11,8 +12,10 @@ local.properties
 .settings/
 .loadpath
 
+
 # Eclipse Core
 .project
+
 
 # External tool builders
 .externalToolBuilders/

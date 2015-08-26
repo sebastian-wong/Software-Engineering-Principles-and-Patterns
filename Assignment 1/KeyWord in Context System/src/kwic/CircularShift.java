@@ -1,52 +1,58 @@
 package kwic;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.lang.StringBuilder;
 
 public class CircularShift {
 
 	Storage storage;
-	ArrayList<String> titles;
 	ArrayList<String> wordsToIgnore;
 	ArrayList<String> shiftedTitles;
-	
-	public CircularShift(Storage words)
+
+	public CircularShift(Storage data)
 	{
-		storage = words;
+		shiftedTitles = new ArrayList<String>();
+		storage = data;
 	}
-	
+
 	public void setup()
 	{
-		titles = storage.getStoredTitles();
 		wordsToIgnore = storage.getStoredIgnoreWords();
 	}
-	
-	public void Shift()
+
+	public void shiftSentence()
 	{
-		for (int i = 0; i < titles.size(); i++)
+		// for every title in the list
+		for (int i = 0; i < storage.getSizeOfStoredTitles(); i++)
 		{
-			String sentence = titles.get(i);
+			String sentence = storage.getTitle(i);
+			// splitting sentence into a list of words on whitespace
+			ArrayList<String> words = new ArrayList<String>(Arrays.asList(sentence.split(" ")));
+			// for every word in a title
 			for (int j=0; j < sentence.length(); j++)
 			{
-				
+				// always check the first word of the sentence
+				// is present in the ignore list
+				if (!wordsToIgnore.contains(words.get(0).toLowerCase()))
+				{
+					StringBuilder shiftedSentence = new StringBuilder();
+					// Reconstructing the split sentence
+					for (String word : words)
+					{
+						shiftedSentence.append(word + " "); 
+					}
+					// remove the additional whitespace in the end
+					shiftedTitles.add(shiftedSentence.toString().trim());
+				}
+				// circular shift
+				String wordToBeShifted = words.get(0);
+				words.remove(0);
+				words.add(wordToBeShifted);
 			}
 		}
 	}
-	
-	
-	//public void insert(String s)
-	//{
-		//ArrayList<String> sentence = new ArrayList<String>(Arrays.asList(s.split(" ")));
-		//for (int i =0; i < sentence.size() ; i++)
-		//{
-			//if (!ignoreList.contains(sentence.get(0))){
-		//		alphabetize.insert(sentence);
-			//}
-			//String temp = sentence.get(0);
-			//removes current first element
-			//sentence.remove(0);
-			//adds removed element to the back
-			//sentence.add(temp);		
-		//}
-	}
-	
-	
-	
+
+}
+
+
+
