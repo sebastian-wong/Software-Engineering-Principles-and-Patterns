@@ -2,7 +2,7 @@ package kwic;
 
 import java.util.Scanner;
 
-public class MasterControl{
+public class MasterController{
 	
 	public static void main(String args[]) 
 	{
@@ -23,7 +23,7 @@ public class MasterControl{
 		circularShift.shiftSentence();
 		AlphabeticShift alphabeticShift = new AlphabeticShift(circularShift);
 		alphabeticShift.alphabetizeInAscendingOrder();
-		Output output = new Output(alphabeticShift);
+		Outputs output = new Outputs(alphabeticShift);
 		output.printResults();
 	}	
 

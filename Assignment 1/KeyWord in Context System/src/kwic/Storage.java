@@ -15,17 +15,7 @@ public class Storage {
 		storedTitles = input.getListOfTitles();
 		storedIgnoreWords = input.getListOfIgnoredWords();
 	}
-
-	public ArrayList<String> getStoredTitles()
-	{
-		return storedTitles;
-	}
-
-	public ArrayList<String> getStoredIgnoreWords()
-	{
-		return storedIgnoreWords;
-	}
-
+	
 	public int getSizeOfStoredTitles()
 	{
 		return storedTitles.size();
@@ -40,6 +30,30 @@ public class Storage {
 	{
 		return storedTitles.get(index);
 	}
+	
+	public String getIgnoreWord(int index)
+	{
+		return storedIgnoreWords.get(index);	
+	}
+	
+	public Boolean checkIfWordIsIgnored(String word)
+	{
+		if (storedIgnoreWords.contains(word))
+		{
+			return true;
+		}
+		else
+			return false;
+	}
 
+	public ArrayList<String> getStoredTitles()
+	{
+		return storedTitles;
+	}
+
+	public ArrayList<String> getStoredIgnoreWords()
+	{
+		return storedIgnoreWords;
+	}
 }
 
