@@ -1,4 +1,4 @@
-package implicitInvocation;
+package kwic_implicitinvocation;
 import java.util.ArrayList;
 import java.util.Collections;
 

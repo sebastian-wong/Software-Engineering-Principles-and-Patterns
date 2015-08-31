@@ -1,4 +1,4 @@
-package kwic;
+package kwic_abstractdata;
 import java.util.ArrayList;
 
 public class Storage {

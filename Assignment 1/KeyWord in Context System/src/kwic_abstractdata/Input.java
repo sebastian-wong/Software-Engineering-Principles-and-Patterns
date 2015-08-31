@@ -1,4 +1,4 @@
-package kwic;
+package kwic_abstractdata;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
@@ -25,7 +25,8 @@ public class Input {
 		try
 		{
 			File file = new File(filename);
-			FileReader fileReader = new FileReader(file);
+			//set file path to bin
+			FileReader fileReader = new FileReader("input/" + file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			String line = null;
 			// Repeat until all lines are read

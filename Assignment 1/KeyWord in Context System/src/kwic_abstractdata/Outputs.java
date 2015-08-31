@@ -1,4 +1,5 @@
-package kwic;
+package kwic_abstractdata;
+
 
 public class Outputs {
 	AlphabeticShift finalOutput;
