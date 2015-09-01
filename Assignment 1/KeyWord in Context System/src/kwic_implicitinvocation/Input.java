@@ -39,7 +39,7 @@ public void readFile(String filename)
 	{
 		File file = new File(filename);
 		//set file path to bin
-		FileReader fileReader = new FileReader("bin/" + file);
+		FileReader fileReader = new FileReader("input/" + file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		String line = null;
 		// Repeat until all lines are read
@@ -61,7 +61,7 @@ public void insertIgnoreList(String filename)
 	{
 		File file = new File(filename);
 		//set file path to bin
-		FileReader fileReader = new FileReader("bin/" + file);
+		FileReader fileReader = new FileReader("input/" + file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		String line = null;
 		// Repeat until all lines are read
@@ -96,12 +96,14 @@ public void readAction(String s)
 			{
 				String filename = s.substring(s.indexOf(" ")+1);
 				readFile(filename);
+				print();
 			}
 			//add line by line
 			else
 			{
 				String title = s.substring(s.indexOf(" ")+1);
 				insert(title);
+				print();
 			}
 		}
 		//delete title
@@ -109,6 +111,7 @@ public void readAction(String s)
 		{
 			String title = s.substring(s.indexOf(" ")+1);
 			delete(title);
+			print();
 		}
 		//ignore list
 		if (firstWord.toLowerCase().equals("ignore") || firstWord.toLowerCase().equals("i"))
@@ -117,11 +120,6 @@ public void readAction(String s)
 			insertIgnoreList(filename);
 		}
 
-	}
-	//print all titles
-	else if (s.toLowerCase().equals("p") || s.toLowerCase().equals("print"))
-	{
-		print();
 	}
 	//read from file
 	else

@@ -41,7 +41,7 @@ public class Input {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public ArrayList<String> getListOfTitles()
 	{
 		return listOfTitles;

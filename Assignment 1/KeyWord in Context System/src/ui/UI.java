@@ -1,8 +1,10 @@
 package ui;
 import java.util.Scanner;
 
+
 //import kwic_implicitinvocation.MasterControl;
 import kwic_abstractdata.MasterController;
+import kwic_implicitinvocation.MasterControl;
 
 public class UI{
 
@@ -12,11 +14,11 @@ public class UI{
 		while (scanner.hasNextLine())
 		{ 
 			String architecture = scanner.nextLine();
-			if (architecture.equals("Implicit Invocation")){
+			if (architecture.toLowerCase().equals("implicit invocation")){
 				startKwicImplicitInvocation();
 				break;
 			}
-			else if (architecture.equals("Abstract Data")){
+			else if (architecture.toLowerCase().equals("abstract data")){
 				startKwicAbstractData();
 				break;
 			}
@@ -41,6 +43,14 @@ public class UI{
 	}
 	public static void startKwicImplicitInvocation()
 	{
-
+		MasterControl masterKwicImplicit = new MasterControl();
+		System.out.println("Please enter the name of the text file containing the list of words to ignore. (E.g : ignore ignore.txt)");
+		Scanner scanner = new Scanner(System.in);
+		while(scanner.hasNextLine())
+		{
+			String line = scanner.nextLine();
+			masterKwicImplicit.inputs(line);
+			System.out.println("Please enter the choice of action (add/delete): ");
+		}
 	}
 }
