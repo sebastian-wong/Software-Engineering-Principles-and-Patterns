@@ -2,6 +2,7 @@ package kwic_abstractdata;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class Input {
 	ArrayList<String> listOfIgnoredWords;
 
 	// constructor
-	public Input (String titleFileName, String ignoreFileName)
+	public Input (String titleFileName, String ignoreFileName) throws FileNotFoundException , IOException
 	{
 		listOfTitles  = new ArrayList<String>();
 		listOfIgnoredWords = new ArrayList<String>();
@@ -20,10 +21,8 @@ public class Input {
 		readFile(ignoreFileName , listOfIgnoredWords);
 	}
 
-	public void readFile(String filename, ArrayList<String> list)
+	public void readFile(String filename, ArrayList<String> list) throws FileNotFoundException, IOException
 	{
-		try
-		{
 			File file = new File(filename);
 			//set file path to bin
 			FileReader fileReader = new FileReader("input/" + file);
@@ -35,11 +34,6 @@ public class Input {
 				list.add(line);
 			}
 			bufferedReader.close();
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
 	}
 	
 	public ArrayList<String> getListOfTitles()

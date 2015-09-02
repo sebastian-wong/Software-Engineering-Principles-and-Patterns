@@ -1,5 +1,9 @@
 package ui;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+
+
 
 
 //import kwic_implicitinvocation.MasterControl;
@@ -8,19 +12,34 @@ import kwic_implicitinvocation.MasterControl;
 
 public class UI{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		System.out.println("Please enter architecture to be chosen:"); 
 		Scanner scanner = new Scanner(System.in);
 		while (scanner.hasNextLine())
 		{ 
 			String architecture = scanner.nextLine();
-			if (architecture.toLowerCase().equals("implicit invocation")){
+			if (architecture.toLowerCase().equals("implicit invocation"))
+			{
 				startKwicImplicitInvocation();
 				break;
 			}
-			else if (architecture.toLowerCase().equals("abstract data")){
-				startKwicAbstractData();
+			else if (architecture.toLowerCase().equals("abstract data"))
+			{
+				try
+				{
+					startKwicAbstractData();
+				}
+				catch(FileNotFoundException e)
+				{
+					System.out.println("Input text files cannot be found.");
+				}
+				catch(IOException e)
+				{
+					System.out.println("Error in user inputs");
+				}
 				break;
+				
 			}
 			else{
 				System.out.println("Please enter architecture to be chosen:"); 
@@ -28,7 +47,7 @@ public class UI{
 		}
 		scanner.close();
 	}
-	public static void startKwicAbstractData()
+	public static void startKwicAbstractData() throws IOException, FileNotFoundException
 	{
 		String inputTitles;
 		String inputIgnoreWords;
