@@ -1,30 +1,27 @@
 package kwic_implicitinvocation;
 import java.util.ArrayList;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.IOException;
 
 public class Input {
 ArrayList<String> ignoreList;
-ArrayList<String> inputTitles;
 Shift shift;
 
 public Input()
 {
-	inputTitles = new ArrayList<String>();
 	ignoreList = new ArrayList<String>();
 	shift = new Shift();
 }
 public void insert(String s)
 {
-	inputTitles.add(s);
 	shift.insert(s);
 }
 
 public void delete(String s)
 {
-	inputTitles.remove(s);
 	shift.delete(s);
 }
 
@@ -33,10 +30,8 @@ public void print()
 	shift.print();
 }
 
-public void readFile(String filename)
+public void readFile(String filename) throws FileNotFoundException, IOException
 {
-	try
-	{
 		File file = new File(filename);
 		//set file path to bin
 		FileReader fileReader = new FileReader("input/" + file);
@@ -48,17 +43,11 @@ public void readFile(String filename)
 			insert(line);
 		}
 		bufferedReader.close();
-	}
-	catch (IOException e)
-	{
-		System.out.println("Invalid file name"); 
-	}
 }
 
-public void insertIgnoreList(String filename)
+public void insertIgnoreList(String filename) throws FileNotFoundException, IOException
 {
-	try
-	{
+
 		File file = new File(filename);
 		//set file path to bin
 		FileReader fileReader = new FileReader("input/" + file);
@@ -72,17 +61,10 @@ public void insertIgnoreList(String filename)
 		}
 		bufferedReader.close();
 		shift.insertIgnoreList(ignoreList);
-	}
-	catch (IOException e)
-	{
-		System.out.println("Invalid file name"); 
-	}
-	
-	
 }
 
 //parses commands to insert, delete or add from file
-public void readAction(String s)
+public void readAction(String s) throws FileNotFoundException, IOException
 {
 	String firstWord = null;
 	if (s.contains(" "))
@@ -124,7 +106,8 @@ public void readAction(String s)
 	//read from file
 	else
 	{
-		System.out.println("Invalid command"); 
+		IOException e = new IOException();
+		throw e;
 	}
 }
 }

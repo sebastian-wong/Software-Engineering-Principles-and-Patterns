@@ -21,7 +21,20 @@ public class UI{
 			String architecture = scanner.nextLine();
 			if (architecture.toLowerCase().equals("implicit invocation"))
 			{
+				try
+				{
 				startKwicImplicitInvocation();
+				}
+				catch(FileNotFoundException e)
+				{
+					System.out.println("Input text files cannot be found.");
+				}
+				catch(IOException e)
+				{
+					System.out.println("Error in user inputs");
+					continue;
+				}
+				
 				break;
 			}
 			else if (architecture.toLowerCase().equals("abstract data"))
@@ -60,7 +73,7 @@ public class UI{
 		MasterController masterKwicAbstractData = new MasterController();
 		masterKwicAbstractData.startKwic(inputTitles,inputIgnoreWords);
 	}
-	public static void startKwicImplicitInvocation()
+	public static void startKwicImplicitInvocation() throws IOException, FileNotFoundException
 	{
 		MasterControl masterKwicImplicit = new MasterControl();
 		System.out.println("Please enter the name of the text file containing the list of words to ignore. (E.g : ignore ignore.txt)");
@@ -71,5 +84,12 @@ public class UI{
 			masterKwicImplicit.inputs(line);
 			System.out.println("Please enter the choice of action (add/delete): ");
 		}
+		
+		scanner.close();
+	}
+	
+	public static void messageToUser(String msg)
+	{
+		System.out.println(msg);
 	}
 }

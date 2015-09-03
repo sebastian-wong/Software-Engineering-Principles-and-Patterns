@@ -25,14 +25,6 @@ public void insertIgnoreList(ArrayList<String> list)
 //Insertion of a title
 public void insert(String originalTitle)
 {	
-	if (ignoreList.isEmpty())
-	{
-		System.out.println("Ignore list is empty!"); 
-		return;
-	}
-	
-	else
-	{
 		//List of words delimited by whitespace
 		ArrayList<String> words = new ArrayList<String>(Arrays.asList(originalTitle.split(" ")));
 		for (int i =0; i < words.size() ; i++)
@@ -66,7 +58,7 @@ public void insert(String originalTitle)
 				//adds removed element to the back
 				words.add(temp);		
 			}
-	}
+	
 }
 
 

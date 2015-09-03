@@ -20,16 +20,9 @@ public void delete(ArrayList<String> list)
 
 public void print()
 {
-		if (!shiftedTitles.isEmpty())
-		{
-			for(String s: shiftedTitles){
+	for(String s: shiftedTitles){
 				System.out.println(s); 
-			}
-		}
-		
-		else{
-			System.out.println("No Titles in KWIC");
-		}
+	}
 }
 }
 
