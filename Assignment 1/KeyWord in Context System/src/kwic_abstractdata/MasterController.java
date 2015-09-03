@@ -18,9 +18,9 @@ public class MasterController{
 		CircularShift circularShift = new CircularShift(storage);
 		circularShift.setup();
 		circularShift.shiftSentence();
-		AlphabeticShift alphabeticShift = new AlphabeticShift(circularShift);
-		alphabeticShift.alphabetizeInAscendingOrder();
-		Outputs output = new Outputs(alphabeticShift);
+		AlphabeticSort alphabeticSort = new AlphabeticSort(circularShift);
+		alphabeticSort.alphabetizeInAscendingOrder();
+		Outputs output = new Outputs(alphabeticSort);
 		output.printResults();
 	}	
 

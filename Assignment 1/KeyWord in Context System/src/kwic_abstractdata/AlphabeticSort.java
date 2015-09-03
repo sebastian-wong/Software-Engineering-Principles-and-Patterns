@@ -3,12 +3,12 @@ package kwic_abstractdata;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class AlphabeticShift {
+public class AlphabeticSort {
 	
 	CircularShift circularShift;
 	ArrayList<String> alphabetizedTitles;
 	
-	public AlphabeticShift(CircularShift shifter)
+	public AlphabeticSort(CircularShift shifter)
 	{
 		alphabetizedTitles = new ArrayList<String>();
 		circularShift = shifter;

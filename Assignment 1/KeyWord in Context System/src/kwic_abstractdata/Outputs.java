@@ -2,9 +2,9 @@ package kwic_abstractdata;
 
 
 public class Outputs {
-	AlphabeticShift finalOutput;
+	AlphabeticSort finalOutput;
 	
-	public Outputs(AlphabeticShift alphabetized)
+	public Outputs(AlphabeticSort alphabetized)
 	{
 		finalOutput = alphabetized;
 	}
