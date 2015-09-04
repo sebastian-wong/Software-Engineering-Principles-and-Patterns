@@ -14,12 +14,14 @@ public class UI{
 
 	public static void main(String[] args)
 	{
-		System.out.println("Please enter architecture to be chosen:"); 
+		System.out.println("Please enter architecture to be chosen : \nPress 1 for Implicit Invocation"
+				+ "\nPress 2 for Abstract Data"); 
 		Scanner scanner = new Scanner(System.in);
 		while (scanner.hasNextLine())
 		{ 
 			String architecture = scanner.nextLine();
-			if (architecture.toLowerCase().equals("implicit invocation"))
+			//Implicit Invocation
+			if (architecture.equals("1"))
 			{
 				try
 				{
@@ -37,7 +39,8 @@ public class UI{
 				
 				break;
 			}
-			else if (architecture.toLowerCase().equals("abstract data"))
+			//Abstract Data
+			else if (architecture.equals("2"))
 			{
 				try
 				{
