@@ -14,4 +14,7 @@ public void inputs(String line) throws FileNotFoundException, IOException{
 	input.readAction(line);
 }
 
+public void insertIgnoreList(String line) throws FileNotFoundException, IOException{ 
+	input.insertIgnoreList(line);
+}
 }

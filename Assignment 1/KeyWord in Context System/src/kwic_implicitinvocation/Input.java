@@ -71,7 +71,7 @@ public void readAction(String s) throws FileNotFoundException, IOException
 	{
 		firstWord = s.substring(0, s.indexOf(" "));
 		//insert title
-		if (firstWord.toLowerCase().equals("add") || firstWord.toLowerCase().equals("a"))
+		if (firstWord.toLowerCase().equals("add"))
 		{	
 			//add from text file
 			if (s.substring(s.length()-1-3,s.length()).equals(".txt"))
@@ -89,17 +89,11 @@ public void readAction(String s) throws FileNotFoundException, IOException
 			}
 		}
 		//delete title
-		if (firstWord.toLowerCase().equals("delete") || firstWord.toLowerCase().equals("d"))
+		if (firstWord.toLowerCase().equals("delete"))
 		{
 			String title = s.substring(s.indexOf(" ")+1);
 			delete(title);
 			print();
-		}
-		//ignore list
-		if (firstWord.toLowerCase().equals("ignore") || firstWord.toLowerCase().equals("i"))
-		{
-			String filename = s.substring(s.indexOf(" ")+1);
-			insertIgnoreList(filename);
 		}
 
 	}

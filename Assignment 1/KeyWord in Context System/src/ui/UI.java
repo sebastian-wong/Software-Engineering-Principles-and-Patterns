@@ -30,6 +30,7 @@ public class UI{
 				catch(FileNotFoundException e)
 				{
 					System.out.println("Input text files cannot be found.");
+					continue;
 				}
 				catch(IOException e)
 				{
@@ -55,10 +56,11 @@ public class UI{
 					System.out.println("Error in user inputs");
 				}
 				break;
+				
 			}
-			else
-			{
-				System.out.println("Please enter architecture to be chosen:"); 
+			else{
+				System.out.println("Please enter architecture to be chosen : \nPress 1 for Implicit Invocation"
+						+ "\nPress 2 for Abstract Data"); 
 			}
 		}
 		scanner.close();
@@ -79,14 +81,27 @@ public class UI{
 	public static void startKwicImplicitInvocation() throws IOException, FileNotFoundException
 	{
 		MasterControl masterKwicImplicit = new MasterControl();
-		System.out.println("Please enter the name of the text file containing the list of words to ignore. (E.g : ignore ignore.txt)");
+		System.out.println("Please enter the name of the text file containing the list of words to ignore (E.g : ignore.txt)");
 		Scanner scanner = new Scanner(System.in);
+		masterKwicImplicit.insertIgnoreList(scanner.nextLine());
+		System.out.println("------------------------COMMANDS---------------------------");
+		System.out.println("add 'title' : adds a single title");
+		System.out.println("add 'filename' : adds a list of titles from a file");
+		System.out.println("delete 'shifted title' : deletes a title from list if its a permutated title");
+		System.out.println("delete 'original title' : deletes all permutations of original titles");
+		System.out.println("\nPlease enter the choice of action add/delete(case sensitive): ");
 		while(scanner.hasNextLine())
 		{
 			String line = scanner.nextLine();
 			masterKwicImplicit.inputs(line);
-			System.out.println("Please enter the choice of action (add/delete): ");
-		}	
+			System.out.println("------------------------COMMANDS---------------------------");
+			System.out.println("add 'title' : adds a single title");
+			System.out.println("add 'filename' : adds a list of titles from a file");
+			System.out.println("delete 'shifted title' : deletes a title from list if its a permutated title");
+			System.out.println("delete 'original title' : deletes all permutations of original titles");
+			System.out.println("\nPlease enter the choice of action add/delete(case sensitive): ");
+		}
+		
 		scanner.close();
 	}
 	
