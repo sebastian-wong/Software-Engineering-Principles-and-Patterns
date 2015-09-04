@@ -55,9 +55,9 @@ public class UI{
 					System.out.println("Error in user inputs");
 				}
 				break;
-				
 			}
-			else{
+			else
+			{
 				System.out.println("Please enter architecture to be chosen:"); 
 			}
 		}
@@ -86,8 +86,7 @@ public class UI{
 			String line = scanner.nextLine();
 			masterKwicImplicit.inputs(line);
 			System.out.println("Please enter the choice of action (add/delete): ");
-		}
-		
+		}	
 		scanner.close();
 	}
 	
