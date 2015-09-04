@@ -2,13 +2,18 @@ package ui;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-
-
-
-
-//import kwic_implicitinvocation.MasterControl;
 import kwic_abstractdata.MasterController;
 import kwic_implicitinvocation.MasterControl;
+
+/** This module provides the user interface to the KWIC
+ * program. A user can select two different architecture to
+ * run the program, namely, the abstract data design and the 
+ * implicit invocation design.
+ * Details on how to enter inputs are provided as prompts
+ * when the user runs the application
+ * @author Sebastian Wong Zhi Qian and Chew Yi Xiu
+ *
+ */
 
 public class UI{
 
@@ -96,7 +101,7 @@ public class UI{
 			masterKwicImplicit.inputs(line);
 			System.out.println("------------------------COMMANDS---------------------------");
 			System.out.println("add 'title' : adds a single title");
-			System.out.println("add 'filename' : adds a list of titles from a file");
+			System.out.println("add 'filename.txt' : adds a list of titles from a file");
 			System.out.println("delete 'shifted title' : deletes a title from list if its a permutated title");
 			System.out.println("delete 'original title' : deletes all permutations of original titles");
 			System.out.println("\nPlease enter the choice of action add/delete(case sensitive): ");

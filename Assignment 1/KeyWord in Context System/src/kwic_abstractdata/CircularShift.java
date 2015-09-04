@@ -3,6 +3,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.lang.StringBuilder;
 
+/** The circular shift class accesses the storage
+ * module using the provided interface to
+ * create a list of shifted titles.
+ * This module also provides an interface for alphabetic
+ * sort to retrieve relevant data.
+ * @author Sebastian Wong Zhi Qian
+ *
+ */
+
 public class CircularShift {
 
 	Storage storage;

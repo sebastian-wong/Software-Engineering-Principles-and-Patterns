@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/** This module does circular shifts of a line of title 
+ * 	by comparing the title with a list of ignore words.
+ * 	Shifted titles are passed on to Alphabetizer module
+ *  @author CHew Yi Xiu
+ */
 public class Shift {
 Alphabetizer alphabetize;
 ArrayList<String> ignoreList;

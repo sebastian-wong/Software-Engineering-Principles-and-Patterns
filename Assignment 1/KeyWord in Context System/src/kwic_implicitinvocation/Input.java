@@ -6,6 +6,12 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.IOException;
 
+/** This module reads user input line by line
+ *  and parses the input to determine if command is a add or delete
+ * and passes on input to Shift module
+ * @author Chew Yi Xiu
+ */
+
 public class Input {
 ArrayList<String> ignoreList;
 Shift shift;

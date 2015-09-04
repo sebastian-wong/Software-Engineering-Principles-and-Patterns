@@ -1,7 +1,12 @@
 package kwic_abstractdata;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+/** This module controls the input, storage, circular shift, alphabetic sort,
+ * and out modules and sequences them in turn. 
+ * @author Sebastian Wong Zhi Qian
+ *
+ */
 
 public class MasterController{
 	

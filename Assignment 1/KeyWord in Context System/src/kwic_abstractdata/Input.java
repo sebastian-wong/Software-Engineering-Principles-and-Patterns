@@ -7,6 +7,14 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.IOException;
 
+/** This class is responsible for reading the text files containing
+ * the titles and ignore words. The input is then stored in the storage
+ * class.
+ * @author Sebastian Wong Zhi Qian
+ *
+ */
+
+
 public class Input {
 
 	ArrayList<String> listOfTitles;

@@ -2,6 +2,10 @@ package kwic_implicitinvocation;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/** This module sorts the list of sorted titles alphabetically 
+ * and passes on the sorted list to the Output module 
+ * @author Chew Yi Xiu
+ */
 public class Alphabetizer {
 ArrayList<String> sortedList;
 Output output;

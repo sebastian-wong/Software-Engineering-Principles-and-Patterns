@@ -3,6 +3,10 @@ package kwic_implicitinvocation;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/** This module passes the user input to Input module 
+ *	@author Chew Yi Xiu
+ */
+
 public class MasterControl {
 Input input;
 	
